@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="sampleSearch.model.SearchAM">
+    <AppModuleConfig name="SearchAMLocal" jbo.project="sampleSearch.model.Model"
+                     ApplicationName="sampleSearch.model.SearchAM" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      <Security AppModuleJndiName="sampleSearch.model.SearchAM"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="SearchAMShared" jbo.project="sampleSearch.model.Model"
+                     ApplicationName="sampleSearch.model.SearchAM" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/Connection1DS"/>
+      <Security AppModuleJndiName="sampleSearch.model.SearchAM"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpDeptCrudAM"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="deptempcrud.model.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="deptempcrud.model.EmployeesView"/>
+  <ViewUsage
+    Name="EmployeesView2"
+    ViewObjectName="deptempcrud.model.EmployeesView"/>
+  <ViewUsage
+    Name="EmployeesView3"
+    ViewObjectName="deptempcrud.model.EmployeesView"/>
+  <ViewUsage
+    Name="DepartmentsView2"
+    ViewObjectName="deptempcrud.model.DepartmentsView"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="deptempcrud.model.EmpManagerFkLink"
+    SrcViewUsageName="deptempcrud.model.EmpDeptCrudAM.EmployeesView1"
+    DstViewUsageName="deptempcrud.model.EmpDeptCrudAM.EmployeesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="deptempcrud.model.EmpDeptFkLink"
+    SrcViewUsageName="deptempcrud.model.EmpDeptCrudAM.DepartmentsView1"
+    DstViewUsageName="deptempcrud.model.EmpDeptCrudAM.EmployeesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="DeptMgrFkLink1"
+    ViewLinkObjectName="deptempcrud.model.DeptMgrFkLink"
+    SrcViewUsageName="deptempcrud.model.EmpDeptCrudAM.EmployeesView1"
+    DstViewUsageName="deptempcrud.model.EmpDeptCrudAM.DepartmentsView2"
+    Reversed="false"/>
+</AppModule>
